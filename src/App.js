@@ -7,7 +7,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Router basename='/'>
+				<Router>
 					<Switch>
 						<Route path="/" exact component={Home} />
 						<Route path="/:url" component={Video} />

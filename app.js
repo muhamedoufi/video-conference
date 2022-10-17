@@ -18,16 +18,16 @@ if (process.env.NODE_ENV === 'production') {
 	console.log(__dirname)
 	app.use(express.static(__dirname + "/build"))
 	app.get("*", (req, res) => {
-		let path_url = req.params['0'].substring(1)
+		// let path_url = req.params['0'].substring(1)
 
-		if (protected.includes(path_url)) {
-			// Return the actual file
-			res.sendFile(`${__dirname}/build/${path_url}`);
-		  } else {
-			// Otherwise, redirect to /build/index.html
-			res.sendFile(`${__dirname}/build/index.html`);
-		  }
-		// res.sendFile(path.join(__dirname+"/build/index.html"))
+		// if (protected.includes(path_url)) {
+		// 	// Return the actual file
+		// 	res.sendFile(`${__dirname}/build/${path_url}`);
+		//   } else {
+		// 	// Otherwise, redirect to /build/index.html
+		// 	res.sendFile(`${__dirname}/build/index.html`);
+		//   }
+		res.sendFile(path.join(__dirname+"/build/index.html"))
 		// let path_url = path.join(__dirname, '/build', 'index.html');
 		// if (!path_url.startsWith('/app/')) // since we're on local windows
 		// 	path_url = path_url.substring(1);
