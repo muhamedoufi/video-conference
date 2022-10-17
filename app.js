@@ -11,12 +11,23 @@ var io = require('socket.io')(server)
 
 app.use(cors())
 app.use(bodyParser.json())
+let protected = ['transformed.js', 'main.css', 'favicon.ico']
 
 if(process.env.NODE_ENV==='production'){
+
 	console.log(__dirname)
 	app.use(express.static(__dirname+"/build"))
 	app.get("*", (req, res) => {
-		res.sendFile(path.join(__dirname+"/build/index.html"))
+		let path_url = req.params['0'].substring(1)
+
+		// res.sendFile(path.join(__dirname+"/build/index.html"))
+		if (protected.includes(path_url)) {
+			// Return the actual file
+			res.sendFile(`${__dirname}/build/${path_url}`);
+		  } else {
+			// Otherwise, redirect to /build/index.html
+			res.sendFile(`${__dirname}/build/index.html`);
+		  }
 	})
 }
 app.set('port', (process.env.PORT || 3000))
