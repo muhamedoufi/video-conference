@@ -27,11 +27,11 @@ if (process.env.NODE_ENV === 'production') {
 		// 	// Otherwise, redirect to /build/index.html
 		// 	res.sendFile(`${__dirname}/build/index.html`);
 		//   }
-		// res.sendFile(path.join(__dirname+"/build/index.html"))
-		let path_url = path.join(__dirname, '/build', 'index.html');
-		if (!path_url.startsWith('/app/')) // since we're on local windows
-			path_url = path_url.substring(1);
-		res.sendFile(path_url);
+		res.sendFile(path.join(__dirname+"/build/index.html"))
+		// let path_url = path.join(__dirname, '/build', 'index.html');
+		// if (!path_url.startsWith('/app/')) // since we're on local windows
+		// 	path_url = path_url.substring(1);
+		// res.sendFile(path_url);
 
 	})
 }
