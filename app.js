@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === 'production') {
 
 	})
 }
-app.set('port', (process.env.PORT || 3000))
+app.set('port', (3000 || process.env.PORT  ))
 
 sanitizeString = (str) => {
 	return xss(str)
