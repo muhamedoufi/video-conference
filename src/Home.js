@@ -19,7 +19,7 @@ class Home extends Component {
 			window.location.href = `/${url[url.length-1]}`
 		} else {
 			// var url = Math.random().toString(36)
-			var url = Math.random().toString(36).substring(2, 7)
+			url = Math.random().toString(36).substring(2, 7)
 			window.location.href = `/${url}`
 		}
 	}
