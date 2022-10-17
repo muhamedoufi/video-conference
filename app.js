@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 
 	console.log(__dirname)
 	app.use(express.static(__dirname + "/build"))
-	app.get("*", (req, res) => {
+	app.get("/*", (req, res) => {
 		// let path_url = req.params['0'].substring(1)
 
 		// if (protected.includes(path_url)) {
