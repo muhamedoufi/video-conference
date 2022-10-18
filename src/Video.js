@@ -20,7 +20,7 @@ import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
 
-const server_url = process.env.NODE_ENV === 'production' ? 'https://interlink.netlify.app' : "http://localhost:3000"
+const server_url = process.env.NODE_ENV === 'production' ? 'https://interlink-2022.netlify.app' : "http://localhost:3000"
 
 
 // eslint-disable-next-line
