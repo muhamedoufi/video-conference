@@ -22,14 +22,19 @@ import "./Video.css"
 
 const server_url = process.env.NODE_ENV === 'production' ? 'https://video-meet-conference.herokuapp.com/' : "http://localhost:3000"
 
+
+// eslint-disable-next-line
 var connections = {}
+
 const peerConnectionConfig = {
 	'iceServers': [
 		// { 'urls': 'stun:stun.services.mozilla.com' },
 		{ 'urls': 'stun:stun.l.google.com:19302' },
 	]
 }
+ // eslint-disable-next-line
 var socket = null
+
 var socketId = null
 var elms = 0
 
@@ -123,7 +128,8 @@ class Video extends Component {
 			if (id === socketId) continue
 
 			connections[id].addStream(window.localStream)
-
+			
+			// eslint-disable-next-line
 			connections[id].createOffer().then((description) => {
 				connections[id].setLocalDescription(description)
 					.then(() => {
@@ -149,7 +155,8 @@ class Video extends Component {
 
 				for (let id in connections) {
 					connections[id].addStream(window.localStream)
-
+					
+					// eslint-disable-next-line
 					connections[id].createOffer().then((description) => {
 						connections[id].setLocalDescription(description)
 							.then(() => {
@@ -186,6 +193,7 @@ class Video extends Component {
 
 			connections[id].addStream(window.localStream)
 
+			 // eslint-disable-next-line
 			connections[id].createOffer().then((description) => {
 				connections[id].setLocalDescription(description)
 					.then(() => {
@@ -346,7 +354,7 @@ class Video extends Component {
 						try {
 							connections[id2].addStream(window.localStream)
 						} catch(e) {}
-			
+						 // eslint-disable-next-line
 						connections[id2].createOffer().then((description) => {
 							connections[id2].setLocalDescription(description)
 								.then(() => {
