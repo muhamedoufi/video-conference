@@ -9,5 +9,4 @@
 
 
 
-  // "serve": "serve -s build",
-  // "server": "NODE_ENV=production nodemon app.js",
+ 
