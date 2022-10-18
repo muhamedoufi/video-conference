@@ -20,7 +20,7 @@ import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
 
-const server_url = process.env.NODE_ENV === 'production' ? 'https://video-meet-conference.herokuapp.com/' : "http://localhost:3000"
+const server_url = process.env.NODE_ENV === 'production' ? 'https://shimmering-monstera-923afb.netlify.app' : "http://localhost:3000"
 
 
 // eslint-disable-next-line
